@@ -1,0 +1,41 @@
+export function getEventImage(path) {
+    if (!path) {
+        return null;
+    }
+
+    const imagePath = String(path).trim();
+
+    if (!imagePath) {
+        return null;
+    }
+
+    if (
+        imagePath.startsWith("http://") ||
+        imagePath.startsWith("https://") ||
+        imagePath.startsWith("data:")
+    ) {
+        return imagePath;
+    }
+
+    if (imagePath.startsWith("/storage/")) {
+        return imagePath;
+    }
+
+    if (imagePath.startsWith("storage/")) {
+        return `/${imagePath}`;
+    }
+
+    if (imagePath.startsWith("/images/")) {
+        return imagePath;
+    }
+
+    if (imagePath.startsWith("images/")) {
+        return `/${imagePath}`;
+    }
+
+    if (imagePath.startsWith("/")) {
+        return imagePath;
+    }
+
+    return `/storage/${imagePath}`;
+}
