@@ -1,3 +1,5 @@
+import { getDemoCatalogImage } from "./demoCatalogImages.js";
+
 export function getEventImage(path) {
     if (!path) {
         return null;
@@ -15,6 +17,11 @@ export function getEventImage(path) {
         imagePath.startsWith("data:")
     ) {
         return imagePath;
+    }
+
+    const demoImage = getDemoCatalogImage(imagePath);
+    if (demoImage) {
+        return demoImage;
     }
 
     if (imagePath.startsWith("/storage/")) {

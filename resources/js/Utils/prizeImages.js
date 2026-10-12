@@ -1,3 +1,5 @@
+import { getDemoCatalogImage } from "./demoCatalogImages.js";
+
 export function getPrizeImage(path) {
     if (!path) {
         return null;
@@ -15,6 +17,11 @@ export function getPrizeImage(path) {
         imagePath.startsWith("data:")
     ) {
         return imagePath;
+    }
+
+    const demoImage = getDemoCatalogImage(imagePath);
+    if (demoImage) {
+        return demoImage;
     }
 
     if (imagePath.startsWith("/storage/")) {
