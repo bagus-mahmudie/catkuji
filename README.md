@@ -4,6 +4,10 @@ Catkuji is a Laravel and Vue application for kuji event catalogs, prize draws, i
 
 **Status:** Local development; a public demo is not yet available. The instructions below describe local setup. They are not a claim that every feature or external integration has been tested on every operating system.
 
+## Preview
+
+[![Catkuji — application preview](docs/screenshots/project-preview.png)](docs/screenshots/project-preview.png)
+
 ## Features
 
 - Kuji events, prize catalogs, draws, tokens, and user inventory
